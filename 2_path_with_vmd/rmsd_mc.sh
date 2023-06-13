@@ -1,5 +1,4 @@
 #!/bin/bash
-MYVMD=/Users/davidebranduardi/bin/vmd
 if which vmd >/dev/null 2>&1; then
     # Executable exists
     MYVMD=`which vmd`
@@ -32,13 +31,13 @@ usage()
   echo " while reading the file.dat    	"
   echo " defaults:"
   echo "  no mc ; -t 1 ; -s 1  "
-  echo "commenti:   con uno stride minore (ovvero piu frames) sembra che non riesce ad ottimizzare molto questo per la "
-  echo "relazione non lineare tra l incremento e lo step che e tanto piu lineare quanto sono i frames. non so come trovaere "
-  echo "una soluzione semplice per questo. In piu molti step iniziali allungano molto il conto. "
-  echo "lo step (-s) regola l ampiezza dell incremento ad ogni iterazione. Piu piccolo "
-  echo "e piu migliora la convergemza ma anche la rallenta. Per vedere come fa, greppare HARMONIC_ENERGY dall output. Questo " 
-  echo "da un idea di come converge. usare mc (-m ) non mi pare particolarmente utile. Il numero di iterazioni (-n) aumenta "
-  echo "la probabilita di convergere ma allunga notevolmente il conto. "
+  echo " "
+  echo " few hints: "
+  echo "  smaller 't' allows to use more frames but it does not translate in a better result. Often times  it just uses more snapshotso"
+  echo " the parameter -s is also important: smaller means that the frames change less from an iteration to the next but it gets "
+  echo "  slower too: there are probably better optimizers that one can use here. HARMONIC_ENERGY is the cost function which is  "
+  echo " minimized: ideally one would like it to diminish and then settle down to one value" 
+  echo " the flag -m was supposed to untrap the system from its local minimum but it doesn't seem particularly useful at this stage"
 }
 rm -rf .l.tcl
 if [ $# -eq 0 ]; then
