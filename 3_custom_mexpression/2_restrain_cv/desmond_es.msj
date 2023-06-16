@@ -1,0 +1,34 @@
+task {
+  set_family = {
+     desmond = {
+        checkpt = {
+           write_last_step = false
+        }
+     }
+  }
+  task = "desmond:auto"
+}
+
+simulate {
+  backend = {
+     force = {
+        term = {
+           ES = {
+              interval = "@*.*.*.*.trajectory.interval"
+           }
+        }
+     }
+  }
+  cfg_file = "desmond_es.cfg"
+  checkpt = {
+     write_last_step = true
+  }
+  compress = ""
+  dir = "."
+  jobname = "$MAINJOBNAME"
+  meta = FILE
+  meta_file = "./desmond_es.m"
+}
+
+
+

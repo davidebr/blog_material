@@ -1,0 +1,1 @@
+rm -rf desmond_es_1-out.tgz desmond_es.cpt desmond_es.cpt.cfg desmond_es.cvseq desmond_es.ene desmond_es-in.cms desmond_es.log desmond_es-multisim_checkpoint desmond_es-multisim_checkpoint_2 desmond_es_multisim.log desmond_es-out.cms desmond_es-out.cfg desmond_es_trj desmond_es-multisim_checkpoint_1
